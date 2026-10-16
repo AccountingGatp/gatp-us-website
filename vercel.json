@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/:path((?!wp-content/|wp-includes/|favicon|robots\\.txt).+)", "destination": "https://gatpsolutions.com/:path", "permanent": false }
+  ],
+  "headers": [
+    { "source": "/wp-(content|includes)/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
+  ]
+}
